@@ -18,7 +18,7 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: '*google.com', // If Google URLs are needed
+        hostname: 'levelupstore.co.za', // If Google URLs are needed
       },
     ],
   },
