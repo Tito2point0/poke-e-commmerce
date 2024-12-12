@@ -1,43 +1,52 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
+
 const slides = [
   {
     id: 1,
-    title: "Pokemon cards 1",
-    description: "Buy Cards now",
+    title: "Welcome to Pokemon cards",
+    description: "Sale on cards now",
     img: "https://i.ebayimg.com/00/s/MTIwMFgxNjAw/z/NZ8AAOSwS0Ni7E1W/$_57.JPG?set_id=880000500F",
     url: "/",
     bg: "bg-gradient-to-r from-blue-100 to-blue-300",
   },
   {
     id: 2,
-    title: "Pokemon cards 2",
-    description: "Buy Cards now",
+    title: "Buy Pokemon Packs and Boxes",
+    description: "Sale on Bundles",
     img: "https://levelupstore.co.za/cdn/shop/files/Untitled_design_2_400x.png?v=1725059551",
     url: "/",
     bg: "bg-gradient-to-r from-yellow-100 to-yellow-300",
   },
   {
     id: 3,
-    title: "Pokemon cards 3",
-    description: "Buy Cards now",
-    img: "https://i.psacard.com/cardfacts/1999-pokemon-game-4-charizard-holo-1st-edition-gem-mt-10-91295.jpg?h=1000",
+    title: "Buy Graded Pokemon Cards",
+    description: "Sale on graded cards",
+    img: "https://i.ebayimg.com/images/g/1yMAAOSwrhplortp/s-l1600.webp",
     url: "/",
     bg: "bg-gradient-to-r from-red-100 to-red-300",
   },
 ];
 
 const Slider = () => {
-  const [current, setCurrent] = useState(0);
+    const [current, setCurrent] = useState(0);
+    
+    // useEffect(() => {
+    //     const interval = setInterval(() => { 
+    //         setCurrent(prev=>(prev === slides.length - 1 ? 0 : prev + 1)) 
+    //     }, 3000)
+    //     return () => clearInterval(interval)
+    //        },[])
 
   return (
-    <div className="h-[calc(100vh-80px)] overflow-hidden">
-      <div className="w-max h-full flex transition-all ease-in-out duration-1000">
+    <div className="h-[calc(100vh-80px)] overflow-hidden ">
+          <div className="w-max h-full flex transition-all ease-in-out duration-1000"
+          style={{transform: `translateX(-${current * 100}vw)`}}>
         {slides.map((slide) => (
           <div
             className={`${slide.bg} w-screen h-full flex flex-col gap-16 xl:flex-row`}
@@ -76,7 +85,8 @@ const Slider = () => {
           className={`w-3 h-3 rounded-full ring-1 ring-gray-600 cursor-pointer flex items-center justify-center ${
             current === index ? "scale-150" : ""
           }`}
-          key={slide.id}
+              key={slide.id}
+                onClick={() => setCurrent(index)}
           >
               {current === index && (
                   <div className="w-[6px] h-[6px] bg-gray-600 rounded-full "></div>
