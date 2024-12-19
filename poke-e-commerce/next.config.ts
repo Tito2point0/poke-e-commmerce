@@ -33,10 +33,13 @@ const nextConfig = {
         hostname: 'external-preview.redd.it',
       },
       
+      {
+        protocol: 'https',
+        hostname: 'www.picclickimg.com',
+      },
     ],
   },
 };
 
 module.exports = nextConfig;
 
- 
