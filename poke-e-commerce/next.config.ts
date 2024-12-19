@@ -20,6 +20,19 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'levelupstore.co.za', // If Google URLs are needed
       },
+      {
+        protocol: 'https',
+        hostname: 'assets.pokemon.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'preview.redd.it',
+      },
+      {
+        protocol: 'https',
+        hostname: 'external-preview.redd.it',
+      },
+      
     ],
   },
 };

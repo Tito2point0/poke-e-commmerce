@@ -1,0 +1,77 @@
+import Link from "next/link";
+import Image from "next/image";
+import { GENGAR_VMAX_IMAGE_URL, PIKACHU_EX_IMAGE_URL, TWOPIKACHU_EX_IMAGE_URL, TWOGENGAR_VMAX_IMAGE_URL } from "../utils/constants";
+// import { PIKACHU_EX_IMAGE_URL } from "../utils/constants";
+// import { TWOGENGAR_VMAX_IMAGE_URL } from "../utils/constants";
+const ProductList = () => {
+  return (
+    <div className="mt-12 flex gap-x-8 gap-y-16 justify-between flex-wrap">
+      <Link href="/test" className="w-full flex flex-col gap-4 sm:w-[45%] lg:[22%]">
+        <div className="relative w-full h-80">
+          <Image
+            src={GENGAR_VMAX_IMAGE_URL}
+            alt=""
+            fill
+            sizes="25vw"
+            className="absolute object-cover rounded-md z-10 hover:opacity-0 transition-opacity easy duration-500"
+          />
+          <Image
+            src={TWOGENGAR_VMAX_IMAGE_URL}
+            alt=""
+            fill
+            sizes="25vw"
+            className="absolute object-cover rounded-md "
+          />
+        </div>
+        <div className="flex justify-between">
+          <span className="font-medium">Product Name </span>
+          <span className="font-semibold">$800</span>
+        </div>
+        <div className="text-sm text-gray-500">My description</div>
+        <button className="rounded-2xl ring-1 ring-poke text-poke w-max py-2 px-4 text-xs hover:bg-poke hover:text-white">Add to Cart</button>
+      </Link>
+      {/* <Link href="/test" className="relative w-full h-80">
+      <Image
+            src={PIKACHU_EX_IMAGE_URL}
+            alt=""
+            fill
+            sizes="25vw"
+            className="absolute object-cover rounded-md z-10 hover:opacity-0 transition-opacity easy duration-500"
+          />
+          <Image
+            src={TWOPIKACHU_EX_IMAGE_URL}
+            alt=""
+            fill
+            sizes="25vw"
+            className="absolute object-cover rounded-md "
+          />
+      </Link> */}
+      <Link href="/test" className="w-full flex flex-col gap-4 sm:w-[45%] lg:[22%]">
+        <div className="relative w-full h-80">
+          <Image
+            src={PIKACHU_EX_IMAGE_URL}
+            alt=""
+            fill
+            sizes="25vw"
+            className="absolute object-cover rounded-md z-10 hover:opacity-0 transition-opacity easy duration-500"
+          />
+          <Image
+            src={TWOPIKACHU_EX_IMAGE_URL}
+            alt=""
+            fill
+            sizes="25vw"
+            className="absolute object-cover rounded-md "
+          />
+        </div>
+        <div className="flex justify-between">
+          <span className="font-medium">Product Name </span>
+          <span className="font-semibold">$800</span>
+        </div>
+        <div className="text-sm text-gray-500">My description</div>
+        <button className="rounded-2xl ring-1 ring-poke text-poke w-max py-2 px-4 text-xs hover:bg-poke hover:text-white">Add to Cart</button>
+      </Link>
+    </div>
+  );
+};
+
+export default ProductList;
