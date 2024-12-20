@@ -1,7 +1,7 @@
 const Filter = () => {
   return (
-    <div className="mt-12 justify-between ">
-      <div className="flex gap-6">
+    <div className="mt-12 flex flex-col lg:flex-row justify-between">
+      <div className="flex gap-6 flex-wrap">
         <select
           name="type"
           id=""
@@ -13,10 +13,21 @@ const Filter = () => {
           <option value="booster">Booster Boxes</option>
           <option value="tins">Tins</option>
           <option value="singles">Singles</option>
-          <input type="text" name="min" placeholder="min price" className="text-xs rounded-2xl pl-2 w-24 ring-1 ring-grey-400"/>
         </select>
+        <input
+          type="text"
+          name="min"
+          placeholder="min price"
+          className="text-xs rounded-2xl pl-2 w-24 ring-1 ring-grey-400"
+        />
+        <input
+          type="text"
+          name="max"
+          placeholder="max price"
+          className="text-xs rounded-2xl pl-2 w-24 ring-1 ring-grey-400"
+        />
         <select
-          name="Value"
+          name="value"
           id=""
           className="py-2 px-4 rounded-2xl text-xs font-medium bg-[#EBEDED]"
         >
@@ -26,8 +37,6 @@ const Filter = () => {
           <option value="-500">Under 500</option>
           <option value="-100">Under 100</option>
           <option value="-50">Under 50</option>
-
-          
         </select>
         <select
           name="Grading"
@@ -40,7 +49,6 @@ const Filter = () => {
           <option value="8">8</option>
           <option value="7">7</option>
           <option value="6">6</option>
-
         </select>
         <select
           name="set"
@@ -56,7 +64,19 @@ const Filter = () => {
           <option value="Surging">Surging Sparks</option>
         </select>
       </div>
-      <div className=""></div>
+      <div className="mt-4 lg:mt-0 lg:ml-6">
+        <select
+          name=""
+          id=""
+          className="py-2 px-4 rounded-2xl text-xs font-medium bg-white ring-1 ring-gray-400"
+        >
+          <option>Sort By</option>
+          <option value="">Price (low to high)</option>
+          <option value="">Price (high to low)</option>
+          <option value="">Newest</option>
+          <option value="">Oldest</option>
+        </select>
+      </div>
     </div>
   );
 };
