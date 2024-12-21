@@ -4,8 +4,8 @@ import ProductImages from "../components/ProductImages";
 
 const SinglePage = () => {
   return (
-    <div className="min-h-screen flex flex-col"> {/* Ensure page fills the screen */}
-      <div className="px-4 md:px-8 lg:px-16 xl:32 2xl:px-64 relative flex flex-col lg:flex-row gap-16 flex-grow">
+    <div className="min-h-screen flex flex-col"> {/* Ensures full viewport height */}
+      <div className="flex-grow px-4 md:px-8 lg:px-16 xl:32 2xl:px-64 relative flex flex-col lg:flex-row gap-16">
         {/* IMG */}
         <div className="w-full lg:w-1/2 lg:sticky top-20 h-max">
           <ProductImages />
@@ -16,12 +16,7 @@ const SinglePage = () => {
           <p className="text-gray-500">
             Lorem ipsum odor amet, consectetuer adipiscing elit. Tortor
             pellentesque cubilia habitant montes vitae dolor. Viverra nam eros
-            erat purus eros penatibus. Diam eu rhoncus dapibus elit mauris
-            dictumst per. Sodales suscipit semper neque elementum scelerisque hac
-            fermentum. Nisi dignissim duis lacinia facilisis a pretium ex. Per
-            egestas enim morbi facilisi dapibus himenaeos porta imperdiet. Etiam
-            mus convallis vivamus quis aenean praesent mi lobortis. Porta
-            venenatis curae odio iaculis mi quis nam morbi.
+            erat purus penatibus. Diam eu rhoncus dapibus elit mauris.
           </p>
           <div className="h-[2px] bg-gray-100">
             <div className="flex items-center gap-4">
@@ -36,7 +31,7 @@ const SinglePage = () => {
               <p>
                 Lorem ipsum odor amet, consectetuer adipiscing elit. Tortor
                 pellentesque cubilia habitant montes vitae dolor. Viverra nam eros
-                erat purus eros penatibus. Diam eu rhoncus dapibus elit mauris.
+                erat purus penatibus. Diam eu rhoncus dapibus elit mauris.
               </p>
             </div>
             <div className="h-[2px] bg-gray-100"></div>
@@ -45,24 +40,26 @@ const SinglePage = () => {
               <p>
                 Lorem ipsum odor amet, consectetuer adipiscing elit. Tortor
                 pellentesque cubilia habitant montes vitae dolor. Viverra nam eros
-                erat purus eros penatibus. Diam eu rhoncus dapibus elit mauris.
+                erat purus penatibus. Diam eu rhoncus dapibus elit mauris.
               </p>
             </div>
             <div className="h-[2px] bg-gray-100"></div>
-            <div className="text-sm mb-16">
+            <div className="text-sm mb-32">
               <h4 className="font-medium mb-4">Title</h4>
               <p>
                 Lorem ipsum odor amet, consectetuer adipiscing elit. Tortor
                 pellentesque cubilia habitant montes vitae dolor. Viverra nam eros
-                erat purus eros penatibus. Diam eu rhoncus dapibus elit mauris.
+                erat purus penatibus. Diam eu rhoncus dapibus elit mauris.
               </p>
             </div>
           </div>
         </div>
       </div>
-      <div className="h-16"></div> {/* Spacer to push footer down */}
+      {/* Spacer to Separate Footer */}
+      <div className="h-40"></div> {/* Increased height to push footer down */}
     </div>
   );
 };
 
 export default SinglePage;
+
