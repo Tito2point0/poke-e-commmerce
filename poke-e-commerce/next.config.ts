@@ -37,6 +37,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'www.picclickimg.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'static1.thegamerimages.com',
+      },
     ],
   },
 };
