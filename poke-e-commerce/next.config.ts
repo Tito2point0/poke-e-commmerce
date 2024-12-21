@@ -32,7 +32,6 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'external-preview.redd.it',
       },
-      
       {
         protocol: 'https',
         hostname: 'www.picclickimg.com',
@@ -40,6 +39,22 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'static1.thegamerimages.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'gamersrowmn.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.dexerto.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'static1.srcdn.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'm.media-amazon.com',
       },
     ],
   },
