@@ -4,7 +4,7 @@ import ProductImages from "../components/ProductImages";
 
 const SinglePage = () => {
   return (
-    <div className="min-h-screen flex flex-col"> {/* Ensures full viewport height */}
+    <div className="min-h-screen flex flex-col pb-40"> {/* Ensures full viewport height and adds padding to bottom */}
       <div className="flex-grow px-4 md:px-8 lg:px-16 xl:32 2xl:px-64 relative flex flex-col lg:flex-row gap-16">
         {/* IMG */}
         <div className="w-full lg:w-1/2 lg:sticky top-20 h-max">

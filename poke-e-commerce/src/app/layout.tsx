@@ -20,8 +20,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Navbar />
-        {children}
-        <Footer />
+        <div className="flex flex-col min-h-screen">
+          <main className="flex-grow pb-40">{children}</main> {/* Adds padding to bottom */}
+          <Footer />
+        </div>
       </body>
     </html>
   );
