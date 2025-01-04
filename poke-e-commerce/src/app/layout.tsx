@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer"; // Ensure the filename is correct
+import { WixClientContextProvider } from "./context/wixContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,11 +20,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar />
-        <div className="flex flex-col min-h-screen">
-          <main className="flex-grow pb-40">{children}</main> {/* Adds padding to bottom */}
+        <WixClientContextProvider>
+          <Navbar />
+          {children}
           <Footer />
-        </div>
+        </WixClientContextProvider>
       </body>
     </html>
   );
