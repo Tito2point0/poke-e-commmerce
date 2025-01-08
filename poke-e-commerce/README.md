@@ -96,3 +96,6 @@ If refreshToken is critical: You cannot overlook this. You must ensure:
 The "refreshToken" cookie exists and contains valid JSON.
 
 Appropriate error handling is in place to alert users or developers when it’s missing or invalid.
+
+NOTE #3
+
