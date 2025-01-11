@@ -9,7 +9,7 @@ export const wixCLientServer = async () => {
     let refreshToken 
 
     try {
-        const cookieStore = cookies();
+        const cookieStore = await cookies();
         refreshToken = JSON.parse(cookieStore.get("refreshToken")?.value || "{}");
     } catch (e) {
         console.log(e);

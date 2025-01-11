@@ -1,16 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
-import {
-  GENGAR_VMAX_IMAGE_URL,
-  PIKACHU_EX_IMAGE_URL,
-  TWOPIKACHU_EX_IMAGE_URL,
-  TWOGENGAR_VMAX_IMAGE_URL,
-} from "../utils/constants";
 import { wixCLientServer } from "../lib/wixClientServer";
 // import { PIKACHU_EX_IMAGE_URL } from "../utils/constants";
 // import { TWOGENGAR_VMAX_IMAGE_URL } from "../utils/constants";
 import DOMpurify from "isomorphic-dompurify"
-
+import { products } from "@wix/stores";
 const PRODUCT_PER_PAGE = 20;
 
 const ProductList = async ({
@@ -36,7 +30,7 @@ const ProductList = async ({
         <Link
           href="/+product.slug"
           className="w-full flex flex-col gap-4 sm:w-[45%] lg:w-[22%]"
-          key={product}
+          key={product._id}
         >
           <div className="relative w-full h-80">
             <Image
@@ -58,12 +52,12 @@ const ProductList = async ({
           </div>
           <div className="flex justify-between">
             <span className="font-medium">{product.name}</span>
-            <span className="font-semibold">${product.price.price}</span>
+            <span className="font-semibold">${product.price?.price ?? 0}</span>
           </div>
 
           {product.additionalInfoSections && (
             <div className="text-sm text-gray-500" dangerouslySetInnerHTML={{__html:DOMpurify.sanitize(product.additionalInfoSections.find(
-              (section: any) => section.title === "shortDesc"
+              (section) => section.title === "shortDesc"
             )?.description || "No description")}}> 
             </div>
           )}

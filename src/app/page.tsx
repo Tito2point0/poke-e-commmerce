@@ -6,7 +6,7 @@ import ProductList from "./components/ProductList";
 import Slider from "./components/Slider";
 // import { useEffect } from "react";
 // import { useWixClient } from "./hooks/useWixClient";
-import { wixCLientServer } from "./lib/wixClientServer";
+// import { wixCLientServer } from "./lib/wixClientServer";
 
 const HomePage = async () => {
   // const wixClient = useWixClient();
@@ -33,7 +33,7 @@ const HomePage = async () => {
         <h1 className="text-2xl">Featured Products</h1>
         <Suspense fallback={"loading"}>
           <ProductList
-            categoryId={process.env.FEATURED_PRODUCTS_CATEGORY_ID}
+            categoryId={process.env.FEATURED_PRODUCTS_CATEGORY_ID ?? "default-category-id"}
             limit={4}
           />
         </Suspense>
