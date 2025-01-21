@@ -5,6 +5,16 @@ import ProductList from "../components/ProductList";
 
 
 const ListPage = () => {
+    const categoryId = process.env.NEXT_PUBLIC_FEATURED_PRODUCTS_CATEGORY_ID;
+
+  // Handle the case where the categoryId is missing
+    if (!categoryId) {
+        return (
+            <div className="flex justify-center items-center h-screen">
+                <p>No category ID available. Please check your environment configuration.</p>
+            </div>
+        );
+    }
     return (
         <div className="px-4 md:px-8 lg:px-16 xl:32 2xl:px-64 relative">
             {/* campaign     */}
@@ -22,7 +32,7 @@ const ListPage = () => {
             <Filter />
             {/* PRODUCTS */}
             <h1 className="mt-12  text-xl font-semibold">Cards For You!</h1>
-            <ProductList categoryId="someCategoryId" />
+            <ProductList categoryId={categoryId} />
         </div>
     )
 }
