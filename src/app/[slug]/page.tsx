@@ -1,7 +1,7 @@
 import AddList from "../components/AddList";
 import CustomizeProducts from "../components/CustomizeProducts";
 import ProductImages from "../components/ProductImages";
-
+export const dynamic = "force-dynamic"
 const SinglePage = () => {
   return (
     <div className="min-h-screen flex flex-col "> {/* Ensures full viewport height and adds padding to bottom */}
