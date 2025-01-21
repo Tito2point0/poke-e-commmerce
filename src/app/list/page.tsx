@@ -2,7 +2,7 @@ import Image from "next/image";
 import Filter from "../components/Filter";
 import ProductList from "../components/ProductList";
 
-
+export const dynamic = "force-dynamic"
 
 const ListPage = () => {
     const categoryId = process.env.NEXT_PUBLIC_FEATURED_PRODUCTS_CATEGORY_ID;
