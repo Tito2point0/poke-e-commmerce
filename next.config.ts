@@ -1,7 +1,11 @@
+/* eslint-disable */
+
+// Ensure the Next.js configuration works as expected
 /**
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
+  reactStrictMode: true, // Keeps strict mode enabled for React
   images: {
     remotePatterns: [
       {
@@ -22,7 +26,7 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'levelupstore.co.za', // If Google URLs are needed
+        hostname: 'levelupstore.co.za',
       },
       {
         protocol: 'https',
@@ -62,7 +66,12 @@ const nextConfig = {
       },
     ],
   },
+  // If you were using `output: 'export'`, remove it to allow for server-side features.
+  // Comment the line below if it's present to enable dynamic server-side behavior.
+  // output: 'export',
+
+  // Custom webpack configuration (if required)
+  
 };
 
 module.exports = nextConfig;
-
