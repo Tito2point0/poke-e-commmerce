@@ -1,32 +1,47 @@
+// ProductList.tsx
 import Link from "next/link";
 import Image from "next/image";
 import { products } from "@wix/stores";
 import { wixCLientServer } from "../lib/wixClientServer";
-import DOMpurify from "isomorphic-dompurify";
+import DOMPurify from "isomorphic-dompurify";
 
 const PRODUCT_PER_PAGE = 20;
 
 type AdditionalInfoSection = {
-  title?: string; // Adjusted type to allow undefined
+  title?: string;
   description?: string;
 };
 
-const ProductList = async ({
-  categoryId,
-  limit,
-}: {
-  categoryId: string;
-  limit?: number;
-}) => {
-  const wixClient = await wixCLientServer();
+const ProductList = async ({ categoryId, limit = PRODUCT_PER_PAGE }: { categoryId: string; limit?: number }) => {
+  let res: { items: products.Product[] } | null = null;
 
-  const res = await wixClient.products
-    .queryProducts()
-    .eq("collectionIds", categoryId)
-    .limit(limit || PRODUCT_PER_PAGE)
-    .find();
+  try {
+    // Initialize the Wix Client
+    const wixClient = await wixCLientServer();
 
-  console.log(res, categoryId);
+    if (!wixClient) {
+      console.error("Failed to initialize Wix Client.");
+      return <p>Error initializing Wix Client. Please try again later.</p>;
+    }
+
+    // Fetch products from the Wix API
+    res = await wixClient.products
+      .queryProducts()
+      .eq("collectionIds", categoryId)
+      .limit(limit)
+      .find();
+
+    console.log("Fetched Products:", res, "Category ID:", categoryId);
+
+  } catch (error: any) {
+    console.error("Error fetching products:", error.message || error);
+    return <p>Failed to load products. Please try again later.</p>;
+  }
+
+  // Handle empty or undefined product list
+  if (!res?.items?.length) {
+    return <p>No products available for this category.</p>;
+  }
 
   return (
     <div className="mt-12 flex gap-x-8 gap-y-16 justify-between flex-wrap">
@@ -42,9 +57,9 @@ const ProductList = async ({
               alt={product.name || "Product Image"}
               fill
               sizes="25vw"
-              className="absolute object-cover rounded-md z-10 hover:opacity-0 transition-opacity easy duration-500"
+              className="absolute object-cover rounded-md z-10 hover:opacity-0 transition-opacity ease duration-500"
             />
-            {product.media?.items && (
+            {product.media?.items?.[1]?.image?.url && (
               <Image
                 src={product.media?.items[1]?.image?.url || "/product.png"}
                 alt={product.name || "Alternate Product Image"}
@@ -61,16 +76,15 @@ const ProductList = async ({
             </span>
           </div>
 
-          {product.additionalInfoSections && (
+          {product.additionalInfoSections?.length > 0 && (
             <div
               className="text-sm text-gray-500"
-              // eslint-disable-next-line react/no-danger
               dangerouslySetInnerHTML={{
-                __html: DOMpurify.sanitize(
+                __html: DOMPurify.sanitize(
                   product.additionalInfoSections.find(
                     (section: AdditionalInfoSection) =>
                       section.title === "shortDesc"
-                  )?.description || "No description"
+                  )?.description || "No description available."
                 ),
               }}
             />
