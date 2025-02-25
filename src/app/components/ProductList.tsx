@@ -33,8 +33,12 @@ const ProductList = async ({ categoryId, limit = PRODUCT_PER_PAGE }: { categoryI
 
     console.log("Fetched Products:", res, "Category ID:", categoryId);
 
-  } catch (error: any) {
-    console.error("Error fetching products:", error.message || error);
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      console.error("Error fetching products:", error.message);
+    } else {
+      console.error("Error fetching products:", error);
+    }
     return <p>Failed to load products. Please try again later.</p>;
   }
 
@@ -76,7 +80,7 @@ const ProductList = async ({ categoryId, limit = PRODUCT_PER_PAGE }: { categoryI
             </span>
           </div>
 
-          {product.additionalInfoSections?.length > 0 && (
+          {product.additionalInfoSections && product.additionalInfoSections.length > 0 && (
             <div
               className="text-sm text-gray-500"
               dangerouslySetInnerHTML={{

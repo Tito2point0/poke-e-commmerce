@@ -6,7 +6,7 @@ import ProductList from "../components/ProductList";
 export const dynamic = "force-dynamic";
 
 const ListPage = () => {
-  const categoryId = process.env.NEXT_PUBLIC_FEATURED_PRODUCTS_CATEGORY_ID;
+  const categoryId = process.env.FEATURED_PRODUCTS_CATEGORY_ID;
 
   // Handle the case where the categoryId is missing
   if (!categoryId) {
@@ -31,7 +31,7 @@ const ListPage = () => {
       </div>
       <Filter />
       <h1 className="mt-12 text-xl font-semibold">Cards For You!</h1>
-      <ProductList categoryId={categoryId} />
+      <ProductList categoryId={categoryId!} />
     </div>
   );
 };
