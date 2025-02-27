@@ -16,10 +16,10 @@ const Footer = () => {
           <span className="font-semibold">jasonvasq@jgdproffessions.com</span>
           <span className="font-semibold flex">+1 732 485 4513</span>
           <div className="flex gap-6">
-            <Image src="/facebook.png" alt="Facebook" width={16} height={16} />
-            <Image src="/instagram.png" alt="Instagram" width={16} height={16} />
-            <Image src="/x.png" alt="X (Twitter)" width={16} height={16} />
-            <Image src="/pinterest.png" alt="Pinterest" width={16} height={16} />
+            <Image src="/facebook.png" alt="Facebook" width={16} height={16} priority unoptimized />
+            <Image src="/instagram.png" alt="Instagram" width={16} height={16} priority unoptimized/>
+            <Image src="/x.png" alt="X (Twitter)" width={16} height={16} priority unoptimized/>
+            <Image src="/pinterest.png" alt="Pinterest" width={16} height={16} priority unoptimized/>
           </div>
         </div>
         {/* Center Section */}
@@ -72,11 +72,11 @@ const Footer = () => {
           </div>
           <span className="font-semibold">Secure Payments</span>
           <div className="flex justify-between">
-            <Image src="/discover.png" alt="Discover" width={40} height={20} />
-            <Image src="/skrill.png" alt="Skrill" width={40} height={20} />
-            <Image src="/paypal.png" alt="PayPal" width={40} height={20} />
-            <Image src="/mastercard.png" alt="MasterCard" width={40} height={20} />
-            <Image src="/visa.png" alt="Visa" width={40} height={20} />
+            <Image src="/discover.png" alt="Discover" width={40} height={20} priority unoptimized/>
+            <Image src="/skrill.png" alt="Skrill" width={40} height={20} priority unoptimized />
+            <Image src="/paypal.png" alt="PayPal" width={40} height={20} priority unoptimized/>
+            <Image src="/mastercard.png" alt="MasterCard" width={40} height={20} priority unoptimized/>
+            <Image src="/visa.png" alt="Visa" width={40} height={20} priority unoptimized/>
           </div>
         </div>
       </div>

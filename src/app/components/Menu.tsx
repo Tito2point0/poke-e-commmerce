@@ -14,6 +14,8 @@ const Menu = () => {
         width={28}
         height={28}
         className="cursor-pointer"
+        priority
+        unoptimized
         onClick={() => setOpen((prev) => !prev)}
       />{" "}
       {open && (

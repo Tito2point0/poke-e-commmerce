@@ -61,6 +61,8 @@ const ProductList = async ({ categoryId, limit = PRODUCT_PER_PAGE }: { categoryI
               alt={product.name || "Product Image"}
               fill
               sizes="25vw"
+              priority
+              unoptimized
               className="absolute object-cover rounded-md z-10 hover:opacity-0 transition-opacity ease duration-500"
             />
             {product.media?.items?.[1]?.image?.url && (
@@ -70,6 +72,8 @@ const ProductList = async ({ categoryId, limit = PRODUCT_PER_PAGE }: { categoryI
                 fill
                 sizes="25vw"
                 className="absolute object-cover rounded-md"
+                priority
+                unoptimized
               />
             )}
           </div>

@@ -22,8 +22,11 @@ const CartModal = () => {
                 src={GENGAR_VMAX_IMAGE_URL}
                 alt=""
                 width={72}
-                height={96}
-                className=" object-cover rounded-md"
+                  height={96}
+                  priority
+                  unoptimized
+                  className=" object-cover rounded-md"
+                  
               />
               <div className="flex flex-col justify-between w-full">
                 {/* top */}
@@ -52,7 +55,9 @@ const CartModal = () => {
                 alt=""
                 width={72}
                 height={96}
-                className=" object-cover rounded-md"
+                  className=" object-cover rounded-md"
+                  priority
+                  unoptimized
               />
               <div className="flex flex-col justify-between w-full">
                 {/* top */}

@@ -17,6 +17,8 @@ const CatagoryList = () => {
               fill
               sizes="20vw"
               className="object-cover"
+              priority
+              unoptimized
             ></Image>
           </div>
           <h1 className="mt-8 font-light text-cl tracking-wide">
@@ -34,6 +36,8 @@ const CatagoryList = () => {
               fill
               sizes="20vw"
               className="object-cover"
+              priority
+              unoptimized
             ></Image>
           </div>
           <h1 className="mt-8 font-light text-cl tracking-wide">
@@ -51,6 +55,8 @@ const CatagoryList = () => {
               fill
               sizes="20vw"
               className="object-cover"
+              priority
+              unoptimized
             ></Image>
           </div>
           <h1 className="mt-8 font-light text-cl tracking-wide">
@@ -67,6 +73,8 @@ const CatagoryList = () => {
               fill
               sizes="20vw"
               className="object-cover"
+              priority
+              unoptimized
             ></Image>
           </div>
           <h1 className="mt-8 font-light text-cl tracking-wide">
@@ -83,6 +91,8 @@ const CatagoryList = () => {
               fill
               sizes="20vw"
               className="object-cover"
+              priority
+              unoptimized
             ></Image>
           </div>
           <h1 className="mt-8 font-light text-cl tracking-wide">
@@ -99,6 +109,8 @@ const CatagoryList = () => {
               fill
               sizes="20vw"
               className="object-cover"
+              priority
+              unoptimized
             ></Image>
           </div>
           <h1 className="mt-8 font-light text-cl tracking-wide">
@@ -115,6 +127,8 @@ const CatagoryList = () => {
               fill
               sizes="20vw"
               className="object-cover"
+              priority
+              unoptimized
             ></Image>
           </div>
           <h1 className="mt-8 font-light text-cl tracking-wide">
@@ -131,6 +145,8 @@ const CatagoryList = () => {
               fill
               sizes="20vw"
               className="object-cover"
+              priority
+              unoptimized
             ></Image>
           </div>
           <h1 className="mt-8 font-light text-cl tracking-wide">
